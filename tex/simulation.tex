@@ -2,9 +2,12 @@
 \usepackage{url}
 
 % adjust typesetting
-\addtolength{\topmargin}{-0.75in}
-\addtolength{\textheight}{1.4in}
+\addtolength{\topmargin}{-0.85in}
+\addtolength{\textheight}{1.6in}
 \linespread{1.08333} % 10/13 spacing
+
+% text macros
+\newcommand{\documentname}{\textsl{Note}}
 
 \begin{document}
 
@@ -21,7 +24,7 @@ The first is that Hamiltonian systems have remarkable transformation
 properties, such that any Hamiltonian system can be used to
 more-or-less exactly simulate any other Hamiltonian system.
 In this sense, we \emph{are} in a simulation: Any Hamiltonian system
-is a simulation of any other Hamiltonian systems at the same number of
+is a simulation of many other Hamiltonian systems at the same number of
 degrees of freedom.
 This is true in either quantum mechanics or classical mechanics.
 The second thing is that if the simulation in which we live is
@@ -30,30 +33,111 @@ in some meta-universe, and if that simulation has input and output
 devices and so on, then it is overwhelmingly unlikely that we
 currently live in a simulation.
 The third thing is that there is an argument from philosophy that we
-are very likely to be living in a simulation (or, actually, the claim
-is of a trilemma).
-This philosophical argument relies on some not-tenable assumptions,
+are very likely to be living in a (very approximate but cleverly patched) simulation.
+This philosophical argument relies on some very weak assumptions,
 including one about being able to know what creatures know, which is
 by no means obviously possible (and quite impossible, right now, by
 us, in this Universe).
 One interesting connected issue is that if we do indeed live in a
 computer simulation of the kind envisioned by movies and philosophers,
 then quite literally there is a god or gods.
-It is up to the reader to decide if this paper is compliant with
+It is up to the reader to decide if this \documentname\ is compliant with
 Hinchliffe's Law.
 
 \section{The plausibility}
 
 \section{The implausibility}
 
+(Introduce spacetime volume and mass-time ideas.)
+
 \section{The high probability}
 
+Famously, Bostrom (2003) solves this implausibility argument by saying
+that \emph{obviously} extremely intelligent and technologically
+capable entities will make ``ancestor simulations'' that have the
+property that they are very approximate, but self-correcting: If an
+intelligent agent within the simulation discovers that they are in the
+simulation, the simulation will be run back and re-started with that
+part simulated at higher resolution (so the intelligent agent never
+makes any such discovery). Very clever! It permits a technological entity
+to make a simulation that is undetectable by any agent within it, without
+requiring simulation hardware that is larger in spacetime volume than
+the world it simulates.
+
+Bostrom goes on to say that if it is natural for any very
+technologically capable entities to make such simulations, and if
+those simulations are rich enough that the agents within them will
+become technologically capable enough to make such simulations, then
+we are exceedingly unlikely to be at the top level of this hierarchy
+of simulations. That is, most intelligent creatures in the full stack
+of universes (top-level plus all simulations) will end up \emph{not}
+being in that top-level universe. Good argument. Or is it?
+
+In addition to the usual eye-rolling that these arguments receive, I
+would highlight two extremely weak assumptions:
+
+The first weakness is that, ultimately, all of these simulated
+universes are being simulated by the top-level hardware. That is,
+every move that is made by every agent in every simulation within
+every simulation within every simulation of this simulation stack is
+being computed by the hardware at the top level. Even if this
+top-level hardware is very sophisicated---even if the entities
+operating it have commandeered the vast majority of the computing
+available to them on their planetary system which itself is made
+entirely of computers, there will have to be incredibly effective
+speed-ups and approximations going on in the simulations to make this
+all possible.
+
+One way to think about it is this: Imagine that the simulations are
+happening with an efficency factor of $q$: That is, because of amazing
+speed-ups obtained by performing the simulations sufficiently
+approximately, every tonne-hour of computing at the top level can
+compute $q>1$ tonne-hours of world-simulation in the stack of
+simulated worlds, on average. Then technologically-capable
+civilizations that want to run such simulations will put far more
+intelligent agents into the simulations and sub-simulations than exist
+at the top-level world when (very roughly speaking) they apportion far
+more than $1/q$ of their total world (like their homes, biosphere,
+computers, land, vehicles, and so on) into performing such
+simulations. That seems like a lot! Even if you got $q$ close to 100,
+which seems implausible, would you really use 1 percent of your total
+resources (and I don't just mean compute resources, I mean
+\emph{total} resources including all equipment, energy, food,
+personnel, and so on) on this project? A project that only addresses a
+small fraction of all interesting non-monetizable science questions?
+That's a pretty strong assumption.
+
+Bostrom considers it obvious that enormously expensive simulation
+efforts would happen at every level in the hierarchy of
+simulations. But I don't think it would happen at \emph{any} level in
+the hierarchy. Unless the singularity leaves us with
+machines-in-charge that are way more interested in pure science than
+we are! That is, the fact that there is a hierarchy of simulations
+does not escape the problem that each simulation of every action in
+every simulated universe puts compute requirements (in some product of
+computing mass times time or total computing energy, say) at the top
+level. Those requirements are finite, and probably killing.
+
+The second weakness I'd like to point out is the unexamined premise
+that you could just stop the simulation and reverse it when someone
+inside the simulation discovers that they are in a simulation! CITE
+WITTGENSTEIN AND THOMPSON.
+
 \section{My attitude, and implications}
+
+Comments on Hinchliffe's Law.
+
+Does Bostrom's paper already rule out the hypothesis? No, because it
+is a bad paper.
+
+Comments on the existence of God.
 
 \section*{References}
 \begin{trivlist}
 \item Bostrom, N., 2003, ``Are You Living in a Computer Simulation?'',
-  \textit{Philosophical Quarterly} \textbf{53} 211, 243--255.
+  \textit{Philosophical Quarterly} \textbf{53} 211 243--255.
+\item Thompson, A., 2017, ``Scientists Can Now Read Your Thoughts With a Brain Scan'',
+  \textit{Popular Mechanics} 2017 June 27.
 \item Wikipedia editors, ``Betteridge's law of headlines'',
   \url{https://en.wikipedia.org/wiki/Betteridge%27s_law_of_headlines}
     (accessed 2020 March 28)
