@@ -16,6 +16,8 @@
 
 % text macros
 \newcommand{\documentname}{\textsl{Note}}
+\newcommand{\foreign}[1]{\textsl{#1}}
+\newcommand{\eg}{\foreign{e.~g.}}
 
 \begin{document}
 
@@ -26,21 +28,22 @@
 {\footnotesize{Center for Cosmology and Particle Physics, Department of Physics, New York University}}
 
 \paragraph{Abstract:}
-I am frequently asked this question, and I have three-ish things to
-say about it:
+I am frequently asked---as a physicist---whether we might live in a simulation.
+I have three-ish things to say about it:
 The first is that Hamiltonian systems have remarkable transformation
 properties, such that any Hamiltonian system can be used to
 more-or-less exactly simulate any other Hamiltonian system.
 In this sense, we \emph{are} in a simulation:
 Any Hamiltonian system can be seen as an analog computer that is
-simulating many other Hamiltonian systems at the same number of
-degrees of freedom.
+simulating many other Hamiltonian systems.
 This is true in either quantum mechanics or classical mechanics.
 The second thing is that if the simulation in which we live is
 \emph{exact}, and if it is deliberately being run by some intelligence
 in some meta-universe, and if that simulation has input and output
 devices and so on, then it is overwhelmingly unlikely that we
-currently live in a simulation.
+currently live in a simulation, just on statistical grounds:
+The simulated Universe will be much smaller (in something akin to spacetime 4-volume)
+than the simulating Universe.
 The third thing is that there is an argument from philosophy (Bostrom)
 that we are very likely to be living in a (very approximate but
 cleverly patched) simulation.
@@ -69,19 +72,35 @@ The question has religious connotations or connections too, because if
 it turns out to be true that we do live in a simulation, then it might
 turn out to be true, strictly speaking, that we have a \emph{maker}.
 As usual, however, when physics questions meet religious questions, it
-will turn out (despite wrong claims by Dawkins, DATE, and others) that
+will turn out
 physics doesn't provide the relevant answers.
 
 One of the remarkable things about physical law, at it's most fundamental,
 is that if the world is unitary and Hamiltonian, then there is a very
-true sense that we could be an a perfect analog-computer simulation....
+true sense that we could be an a perfect analog-computer simulation.
+In both classical mechanics (\eg, CITE GOLDSTEIN) and quantum mechanics
+(\eg, CITE SOMETHING), there are perfect symplectic coordinate transformations
+between Hamiltonian systems, such that any Hamiltonian system (possibly subject
+to some weak assumptions like a time-independent form for the Hamiltonian)
+can be transformed into any other Hamiltonian system, delivering identical
+dynamics.
+
+When these transformations are made, combinations of positions and
+velocities from one coordinate system or representation become
+positions in the other coordinate system, and different combinations
+become velocities....
+Initial conditions...
+Entropy and etc...
 
 ... the point that this means that the question has to become a
 statistical or probabilistic one.
 
 \section{The implausibility}
 
-(Introduce spacetime volume and mass-time ideas.)
+(Introduce spacetime volume and mass-time ideas. Call out the point
+that within general relativity there is a measure problem that might
+make what's being said here technically wrong, but you know what I
+mean (sort of?). Woah, maybe this could be used to define a measure??)
 
 \section{The high probability}
 
@@ -101,8 +120,10 @@ Bostrom goes on to say that if it is natural for any very
 technologically capable entities to make such simulations, and if
 those simulations are rich enough that the agents within them will
 become technologically capable enough to make such simulations, then
-we are exceedingly unlikely to be at the top level of this hierarchy
-of simulations. That is, most intelligent creatures in the full stack
+they will also make rich simulations, and so on. Once you build this
+tower of simulations, he claims, we are exceedingly unlikely to be at
+the top level of the tower.
+That is, most intelligent creatures in the full stack
 of universes (top-level plus all simulations) will end up \emph{not}
 being in that top-level universe. Good argument. Or is it?
 
@@ -143,7 +164,7 @@ That's a pretty strong assumption.
 Bostrom considers it obvious that enormously expensive simulation
 efforts would happen at every level in the hierarchy of
 simulations. But I don't think it would happen at \emph{any} level in
-the hierarchy. Unless the singularity leaves us with
+the hierarchy. Unless the singularity (\eg, Good 1966, or Chalmers 2010) leaves us with
 machines-in-charge that are way more interested in pure science than
 we are! That is, the fact that there is a hierarchy of simulations
 does not escape the problem that each simulation of every action in
@@ -167,14 +188,17 @@ Comments on the existence of God.
 
 \section*{References}
 \begin{trivlist}
-\item Bostrom, N., 2003, ``Are You Living in a Computer Simulation?'',
+\item Bostrom,~N., 2003, Are You Living in a Computer Simulation?,
   \textit{Philosophical Quarterly} \textbf{53} 211 243--255.
-\item Dawkins, R., HOGG DATE ETC.
+\item Chalmers,~D.~J., The Singularity: A philosophical analysis,
+  \textit{Journal of Consciousness Studies} \textbf{17} 7--65.
+\item Good,~I.~J., 1966. Speculations concerning the first ultraintelligent machine,
+  in (F.~L.~Alt \& M.~Rubinoff, eds.) \textit{Advances in Computers} \textbf{6} 31--88.
 \item \textit{Matrix, The}, HOGG DATE ETC.
-\item Thompson, A., 2017, ``Scientists Can Now Read Your Thoughts With a Brain Scan'',
+\item Thompson, A., 2017, Scientists Can Now Read Your Thoughts With a Brain Scan,
   \textit{Popular Mechanics} 2017 June 27.
 \item \textit{Total Recall}, HOGG DATE ETC.
-\item Wikipedia editors, ``Betteridge's law of headlines'',
+\item Wikipedia editors, Betteridge's law of headlines,
   \url{https://en.wikipedia.org/wiki/Betteridge%27s_law_of_headlines}
     (accessed 2020 March 28)
 \item Wittgenstein, L., 1958, \textit{The Blue and Brown Books},
