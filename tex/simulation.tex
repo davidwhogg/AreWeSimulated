@@ -1,72 +1,155 @@
-% Copyright 2020 the author. All rights reserved.
+% Copyright 2021 the authors. All rights reserved.
 
 % To-do items
 % -----------
-% - outline all sections
-% - fill out to zeroth draft
 % - make sure I make the point that the sim hypothesis DOES make predictions if there is any finite probability on the simulation being imperfect
 % - make sure I make the point that this, in turn, makes the existence of God potentially observable
 % - make sure I clearly make the distinction between a perfect simulation and an approximate simulation
 % - make sure I clearly make the distinction between an intentionally constructed simulation and a naturally occurring simulation, if that distinction can exist?
 % - connection to the anthropic principle: The Universe has a purpose. So maybe the anthropic principle is different in a simulated universe?
 % - need a literature review of relevant physics papers.
-% - acknowledgements: Kleban, Seraphim, many students through the years.
+% - acknowledgements: Kleban, Ness, many students through the years.
 % - search for all ... or HOGG or DATE or CITE.
 
 \documentclass[12pt,letterpaper]{article}
 \usepackage{url}
+\usepackage{xcolor}
 
 % adjust typesetting
-\addtolength{\topmargin}{-0.95in}
-\addtolength{\textheight}{1.8in}
+\makeatletter
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+  {-3.25ex \@plus -1ex \@minus -.2ex}%
+  {1.5ex \@plus .2ex}%
+  {\raggedright\normalfont\large\bfseries}}
+\makeatother
+\addtolength{\topmargin}{-0.80in}
+\addtolength{\textheight}{1.90in}
 \linespread{1.08333} % 10/13 spacing
+\raggedbottom\sloppy\sloppypar\frenchspacing
+\pagestyle{myheadings}
+\markright{\textsf{\upshape\color{gray}%
+Hogg \& Seraphim --- Is the simulation hypothesis a physics question?}\hfill}
+\thispagestyle{empty}
 
 % text macros
 \newcommand{\documentname}{\textsl{Note}}
+\newcommand{\sectionname}{Section}
+\newcommand{\secref}[1]{\sectionname~\ref{#1}}
 \newcommand{\foreign}[1]{\textsl{#1}}
 \newcommand{\eg}{\foreign{e.~g.}}
 
 \begin{document}
 
-\section*{Do we live inside a computer simulation?}
+\section*{Does the simulation hypothesis lead to physics questions?}
 
-\noindent
-\textbf{David W. Hogg}\\
-{\footnotesize{Center for Cosmology and Particle Physics, Department of Physics, New York University}}
+\medskip\noindent
+\textbf{David W. Hogg}
+{\footnotesize~\\\url{https://orcid.org/0000-0003-2866-9403}\\Center for Cosmology and Particle Physics, Department of Physics, New York University}
+
+\medskip\noindent
+\textbf{Paula Seraphim}
+{\footnotesize~\\College of Arts and Sciences, New York University}
 
 \paragraph{Abstract:}
-I am frequently asked---as a physicist---whether we might live in a simulation.
-I have three-ish things to say about it:
-The first is that Hamiltonian systems have remarkable transformation
-properties, such that any Hamiltonian system can be used to
-more-or-less exactly simulate any other Hamiltonian system.
-In this sense, we \emph{are} in a simulation:
-Any Hamiltonian system can be seen as an analog computer that is
-simulating many other Hamiltonian systems.
-This is true in either quantum mechanics or classical mechanics.
-The second thing is that if the simulation in which we live is
-\emph{exact}, and if it is deliberately being run by some intelligence
-in some meta-universe, and if that simulation has input and output
-devices and so on, then it is overwhelmingly unlikely that we
-currently live in a simulation, just on statistical grounds:
-The simulated Universe will be much smaller (in something akin to spacetime 4-volume)
-than the simulating Universe.
-The third thing is that there is an argument from philosophy (Bostrom)
-that we are very likely to be living in a (very approximate but
-cleverly patched) simulation.
-This philosophical argument relies on some very weak assumptions,
-including one about being able to know what creatures know, which is
-by no means obviously possible (and quite impossible, right now, by
-us, in this Universe).
-One interesting connected issue is that if we do indeed live in a
-computer simulation of the kind envisioned by movies and philosophers,
-then quite literally there is a god or gods.
-This \documentname\ is compliant with Hinchliffe's Law.
+Do we live inside a computer simulation?
+This question is of interest to many students of physics, but is it really a physics question?
+One possible answer is that if the simulation hypothesis makes predictions---even vague or conditional predictions---for the outcomes of experimental physics programs, then yes, it is a physics question.
+There are indeed a number of such predictions, depending on whether the simulation is classical or quantum, how the simulators or simulating universe intervenes in the simulation, what kinds of approximations are in play, and other engineering considerations (such as bugs).
+For example, if the simulation is, or involves, exact quantum simulation of quantum states in this world, and it is being observed by (or interacting with) any external system, then there might be observable violations of unitarity or quantum relationships.
+For another, if the simulation is approximate or spatially limited, the limits of the approximations might lead to observable effects.
+No particular observable consequences of the simulation are predicted at high confidence because they are all conditional on details of the simulation technology and objectives, but there are nonetheless generic signatures that could be used to guide experimental searches; in this way the search for evidence for a simulation is somewhat akin to searches for the particle nature of the dark matter.
+One epistemological point is that if we do indeed live in a computer simulation of the kind envisioned by movies and philosophers, then quite literally our maker (or something like god) is potentially subject to discovery by experimentation.
+This \documentname\ violates Hinchliffe's Law.
+
+\section{Introduction}
+
+When one spends some time at the beach, watching the waves slowly break and crash onto the sand in foamy washes, with sandpipers running to grab tiny insects displaced by the water in the sand, one must to conclude that the external simulators---if we do indeed live in a computer simulation---are spending one ridiculous amount of computing on the shoreline.
+Or maybe the externals are only spending their computation on the part of the shoreline that one is currently looking at, and only for that time, but still?
+Or maybe it is a full quantum simulation, in which case the externals are spending way more computation on \emph{each individual grain of sand} than whatever is required to make those waves crash and sandpipers run.
+But of course we don't know the intentions and capabilities of the externals.
+Maybe computation is really cheap in the external world, and maybe the questions being answered by this simulation are of enormous importance there.
+So the question arises: Is it conceivable that we live in a computer simulation?
+And what do we even mean by that idea?
+
+The point of this \documentname{} is \emph{not} to answer the question ``Do we live in a simulation?''.
+It is to answer the question ``Is this a physics question, worthy of consideration by physicists?''.
+Oddly, we think the answer to this latter question is ``yes'':
+The simulation hypothesis is important enough to justify consideration, and it can and does lead to some natural kinds of (perhaps vague) predictions for physical experiments in physics laboratories and observatories.
+That is, the simulation hypothesis is an idea that can inspire searches for new physics or anomalies, in much the same way that other high-level ideas in physics, such as inflation, string theory, or unification have and do inspire experimental searches.
+
+Here we discuss some of the relevant questions and definitions, with a goal of starting this conversation.
+Because we encounter these questions so much in the undergraduate-education context, we have tried to set the level for an advanced undergraduate studying physics, philosophy, neuroscience, or a related field.
+We are aware that many physicists consider the simulation hypothesis ridiculous or fantastical.
+But our view is that things that are legitimately interesting to students of physics are themselves legitimately worthy of consideration by physicists.
+
+At the very least we hope to convince you that a lot of interesting ideas arise in the context of these questions.
+These include the following:
+Hamiltonian systems have strong symmetries that make some kinds of simulations natural, and others impossible.
+There is finite computing capacity inside our Universe, and thus there are limits to what kinds of simulations would be possible \emph{by} us, and this capacity changes very dramatically if we ourselves are inside an approximate simulation.
+Good (and bad) software engineering practices might have implications for observables.
+The epistemological basis for cosmological measurement and discovery---which is already problematic---gets even weirder if we consider the possibility that we live inside an engineered system.
+We work through these ideas and more, discursively, in what follows.
+We attempt to gather together our main predictions or conclusions in \secref{sec:discussion}.
+
+\section{Hamiltonian systems}
+
+It is possible to think of the Universe as being a very big, analog computer.
+Every thing that happens is computed, analytically, by the laws of physics.
+This way of thinking is strongly encouraged, in some sense, by the symmetries of Hamiltonian systems:
+In a Hamiltonian system, the physicist has a huge range of choices to make about the coordinate system, such that different observers might give very different---but all equally valid---descriptions of the same system.
+
+... different canonical representations are simulating each other, exactly! Cite things.
+
+... True for quantum mechanics too, which is also hamiltonian. Cite Feynman things.
+
+So we DO live in a simulation, in the sense that the laws of physics that operate here are probably subject to exact transformations to other extremely different representations.
+
+By the way, maybe this relates to the low entropy of the initial conditions of the Universe...?
+
+\section{What is a simulaton?}
+
+The above considerations about Hamiltonian systems lead to the question: What do we mean when we propose that we might be living in a simulation?
+
+If we live in an isolated hamiltonian system that is not being observed or interacted with from the outside (as it were), there will be no observational consequences to the hypothesis that it is a simulation.
+Indeed, for many physicists, this is precisely how we \emph{do} think of our Universe.
+
+I think it is only an interesting hypothesis when it means that there is an engineered or designed physical computing system inside of which we live, and that the externals are at least occasionally observing it or interacting with it.
+
+And it is even more interesting if it involves physical approximations or if the computation has strong limitations.
+
+\section{Computing capacity of the Universe}
+
+\section{Quantum computing}
+
+\section{Classical approximate simulations}
+
+\section{The problem of patching}
+
+\section{Simulations within simulations}
+
+\section{The intentions and practices of the externals}
+
+Why are we being simulated? Because those parts will be best, we expect.
+
+Bugs and Mandela effect.
+
+Towards the end of this section, conclude that, within the simulation hypothesis, the epistemological status of god changes.
+
+\section{Discussion and conclusions}\label{sec:discussion}
+
+\paragraph{Acknowledgements:}
+
+\section*{References}
+
+\end{document}
+
+%%
+OLD STUFF FOLLOWS
+%%
 
 \section{The plausibility}
 
-Do we live in a simulation? This question is asked of me frequently by
-students, especially undergraduates interested in majoring in physics.
+ALL WRONG / FIX....students, especially undergraduates interested in majoring in physics.
 It is also a question that is (effectively) asked by many popular
 movies, including \textit{The Matrix} (DATE), \textit{Total Recall}
 (DATE) and others.
