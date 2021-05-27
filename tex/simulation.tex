@@ -7,15 +7,13 @@
 % - make sure I clearly make the distinction between a perfect simulation and an approximate simulation
 % - make sure I clearly make the distinction between an intentionally constructed simulation and a naturally occurring simulation, if that distinction can exist?
 % - connection to the anthropic principle: The Universe has a purpose. So maybe the anthropic principle is different in a simulated universe?
-% - need a literature review of relevant physics papers.
-% - acknowledgements: Kleban, Ness, many students through the years.
-% - search for all ... or HOGG or DATE or CITE.
+% - the point that in principle, one generic prediction of being in a simulation is that the world would then be simulate-able itself. This prediction is confirmed in our universe. Cite TikToker @briicstar01.
 
 \documentclass[12pt,letterpaper]{article}
 \usepackage{url}
 \usepackage{xcolor}
 
-% adjust typesetting
+% adjust typesetting and page layout
 \makeatletter
 \renewcommand\section{\@startsection {section}{1}{\z@}%
   {-3.25ex \@plus -1ex \@minus -.2ex}%
@@ -25,11 +23,11 @@
 \addtolength{\topmargin}{-0.80in}
 \addtolength{\textheight}{1.90in}
 \linespread{1.08333} % 10/13 spacing
-\raggedbottom\sloppy\sloppypar\frenchspacing
 \pagestyle{myheadings}
 \markright{\textsf{\upshape\color{gray}%
 Hogg \& Seraphim --- Is the simulation hypothesis a physics question?}\hfill}
 \thispagestyle{empty}
+\raggedbottom\sloppy\sloppypar\frenchspacing
 
 % text macros
 \newcommand{\documentname}{\textsl{Note}}
@@ -44,21 +42,25 @@ Hogg \& Seraphim --- Is the simulation hypothesis a physics question?}\hfill}
 
 \medskip\noindent
 \textbf{David W. Hogg}
-{\footnotesize~\\\url{https://orcid.org/0000-0003-2866-9403}\\Center for Cosmology and Particle Physics, Department of Physics, New York University}
+{\par\noindent\footnotesize%
+\url{https://orcid.org/0000-0003-2866-9403}\\Center for Cosmology and Particle Physics, Department of Physics, New York University%
+\par}
 
 \medskip\noindent
 \textbf{Paula Seraphim}
-{\footnotesize~\\College of Arts and Sciences, New York University}
+{\par\noindent\footnotesize%
+College of Arts and Sciences, New York University%
+\par}
 
 \paragraph{Abstract:}
 Do we live inside a computer simulation?
 This question is of interest to many students of physics, but is it really a physics question?
 One possible answer is that if the simulation hypothesis makes predictions---even vague or conditional predictions---for the outcomes of experimental physics programs, then yes, it is a physics question.
 There are indeed a number of such predictions, depending on whether the simulation is classical or quantum, how the simulators or simulating universe intervenes in the simulation, what kinds of approximations are in play, and other engineering considerations (such as bugs).
-For example, if the simulation is, or involves, exact quantum simulation of quantum states in this world, and it is being observed by (or interacting with) any external system, then there might be observable violations of unitarity or quantum relationships.
+For example, if the simulation is, or involves, exact quantum simulation of quantum states in this world, and it is being observed by (or interacting with) any external system, then there might be observable violations of unitarity.
 For another, if the simulation is approximate or spatially limited, the limits of the approximations might lead to observable effects.
 No particular observable consequences of the simulation are predicted at high confidence because they are all conditional on details of the simulation technology and objectives, but there are nonetheless generic signatures that could be used to guide experimental searches; in this way the search for evidence for a simulation is somewhat akin to searches for the particle nature of the dark matter.
-One epistemological point is that if we do indeed live in a computer simulation of the kind envisioned by movies and philosophers, then quite literally our maker (or something like god) is potentially subject to discovery by experimentation.
+One epistemological point is that if we do indeed live in a computer simulation of the kind envisioned by movies and philosophers, then quite literally our maker (something like god) is potentially subject to discovery by experimentation.
 This \documentname\ violates Hinchliffe's Law.
 
 \section{Introduction}
@@ -67,15 +69,15 @@ When one spends some time at the beach, watching the waves slowly break and cras
 Or maybe the externals are only spending their computation on the part of the shoreline that one is currently looking at, and only for that time, but still?
 Or maybe it is a full quantum simulation, in which case the externals are spending way more computation on \emph{each individual grain of sand} than whatever is required to make those waves crash and sandpipers run.
 But of course we don't know the intentions and capabilities of the externals.
-Maybe computation is really cheap in the external world, and maybe the questions being answered by this simulation are of enormous importance there.
-So the question arises: Is it conceivable that we live in a computer simulation?
+Maybe computation is really cheap in the external world, and maybe the questions being answered by this simulation (the one we are in) are of enormous importance out there.
+The question arises: Is it conceivable that we live in a computer simulation?
 And what do we even mean by that idea?
 
 The point of this \documentname{} is \emph{not} to answer the question ``Do we live in a simulation?''.
 It is to answer the question ``Is this a physics question, worthy of consideration by physicists?''.
 Oddly, we think the answer to this latter question is ``yes'':
 The simulation hypothesis is important enough to justify consideration, and it can and does lead to some natural kinds of (perhaps vague) predictions for physical experiments in physics laboratories and observatories.
-That is, the simulation hypothesis is an idea that can inspire searches for new physics or anomalies, in much the same way that other high-level ideas in physics, such as inflation, string theory, or unification have and do inspire experimental searches.
+That is, the simulation hypothesis is an idea that can inspire searches for new physics or anomalies, in much the same way that other high-level ideas in physics, such as inflation, string theory, the vacuum energy, or unification have inspired and continue to inspire experimental searches.
 
 Here we discuss some of the relevant questions and definitions, with a goal of starting this conversation.
 Because we encounter these questions so much in the undergraduate-education context, we have tried to set the level for an advanced undergraduate studying physics, philosophy, neuroscience, or a related field.
@@ -89,24 +91,36 @@ There is finite computing capacity inside our Universe, and thus there are limit
 Good (and bad) software engineering practices might have implications for observables.
 The epistemological basis for cosmological measurement and discovery---which is already problematic---gets even weirder if we consider the possibility that we live inside an engineered system.
 We work through these ideas and more, discursively, in what follows.
-We attempt to gather together our main predictions or conclusions in \secref{sec:discussion}.
+
+We attempt to gather together our main predictions or conclusions in \secref{sec:discussion} and we make some comments on the literature in the annotated bibliography in \secref{sec:bibliography}.
+If you want to skim, read \sectionname~\ref{sec:definition}, where we define terms used throughout.
 
 \section{Hamiltonian systems}
 
 It is possible to think of the Universe as being a very big, analog computer.
 Every thing that happens is computed, analytically, by the laws of physics.
 This way of thinking is strongly encouraged, in some sense, by the symmetries of Hamiltonian systems:
-In a Hamiltonian system, the physicist has a huge range of choices to make about the coordinate system, such that different observers might give very different---but all equally valid---descriptions of the same system.
+In a Hamiltonian system, the physicist has a huge range of choices to make about the coordinate system or representation, such that different observers might give very different---but all equally valid---descriptions of the same system.
 
-... different canonical representations are simulating each other, exactly! Cite things.
+For an extremely simple example: In the two-body problem in which two charges orbit one another in electromagnetism (or two masses in gravity), the system can be analyzed in terms of the positions of the two particles and their velocities, or in terms of the position of the center of mass and the displacement between the particles and the time derivatives of those vectors.
+This example is very simple!
+But there is no truth to the matter of which representation is more fundamental or more correct:
+Both representations lead to sensible, unitary, Hamiltonian dynamics.
+Thus there is no sense in which the representation that we think of as being fundamental is the only valid description of the physics.
+This physics might emerge from another representation that is extremely different, and possibly far more complex (or far simpler).
 
-... True for quantum mechanics too, which is also hamiltonian. Cite Feynman things.
+Because there are these representation transformations that preserve all physical character, but look very different, there is a very real sense in which we might live in some kind of \emph{exact} simulation.
+In this context, there is one kind of somehow fundamental physics, and the physics we experience and observe is some canonical tranformation thereof.
+These kinds of exact simulations are possible in both quantum and classical Hamiltonian systems; it is controlled by the point that they are Hamiltonian, not whether they are classical or quantum.
+Indeed, these observations have been made in literature from the 1980s \cite{feynman, feynman2} that was preface to the literature on quantum computing, where the original ideas were to make laboratory quantum systems that could exactly simulate other or natural quantum systems.
 
-So we DO live in a simulation, in the sense that the laws of physics that operate here are probably subject to exact transformations to other extremely different representations.
+So we DO live in a simulation, in the sense that the laws of physics that operate here are probably\footnote{Some would say ``definitely'' and not ``probably'' here, but it is possible that Hamiltonian symmetry is an approximate symmetry in our Universe.} subject to exact transformations to other extremely different representations.
 
-By the way, maybe this relates to the low entropy of the initial conditions of the Universe...?
+...By the way, maybe this relates to the low entropy of the initial conditions of the Universe...?
 
-\section{What is a simulaton?}
+Of course if this Hamiltonian system is being observed by externals, it will show departures from unitarity. Why? Because it must then excite degrees of freedom outside our Universe. So in this case it must be that the computer isn't truly Hamiltonian, but a non-Hamiltonian system approximating a Hamiltonian system, or else we should see departures from unitarity in sufficiently sensitive and appropriate physics experiments.
+
+\section{What is a simulation?}\label{sec:definition}
 
 The above considerations about Hamiltonian systems lead to the question: What do we mean when we propose that we might be living in a simulation?
 
@@ -117,15 +131,45 @@ I think it is only an interesting hypothesis when it means that there is an engi
 
 And it is even more interesting if it involves physical approximations or if the computation has strong limitations.
 
+DEFINE TERMS, like give names for the different cases, and give names to the external universe and the externals and the intentional simulators and so on. Also the concept of four-volume of the simulation. Is this covariant?
+
+BREAKDOWNS INCLUDE: approximate or exact. observed or not observed. solipsistic or multi-player. involving humans (or human parts) or all-computation. adversarial or not.
+
 \section{Computing capacity of the Universe}
+
+If our Universe is being exactly simulated [use consistent terminology here], then the Universe in which it is being simulated must have, in some sense, a higher overall capacity for computation than this Universe.
+That is, if there is anything \emph{else} going on in the external Universe, this simulation must not be using up \emph{all} of its computing capacity.
+Of course our simulation could be running at low speed (time could be passing much more slowly for us than for the externals), to save compute capacity.
+But even then, if we think of the four-volume (spatial volume times time duration) taken up by our simulation in the external world, it must be larger than the four-volume of computation available in our Universe.
+
+Even if our Universe is a very approximate simulation, there are limits on the kind of computer that might be hosting this simulation, and the runtime on that computer. .  .
+
 
 \section{Quantum computing}
 
 \section{Classical approximate simulations}
 
+The Thirteenth Floor, The Matrix, Total Recall.
+
 \section{The problem of patching}
 
+The importance of patching to Bostrom's paper. If done perfectly, it ensures that the simulation has no observable consequences. It is what truly deceptive, approximate simulators would do.
+
+It is only one option, however, so it doesn't make the simulation hypothesis unobservable; it just means that there are simulation methods that would effectively render the simulation unobservable. It's hard or impossible to put probabilities on that.
+
+The fact that patching isn't obviously possible. It relies on some things in neuroscience I think maybe?
+
+\section{Brains in vats}
+
+Like Matrix.
+
+Also the case where you, reading this article, are the only intelligence in the whole Universe.
+
 \section{Simulations within simulations}
+
+The Bostrom argument relies on this. Maybe Kipping too?
+
+It is very unlikely that you can do an approximate simulation within an approximate simulation, because you wouldn't be able to do it cheaply, at the upper level. This is a bit of a subtle argument.
 
 \section{The intentions and practices of the externals}
 
@@ -133,166 +177,19 @@ Why are we being simulated? Because those parts will be best, we expect.
 
 Bugs and Mandela effect.
 
+Joke about the idiocy of the Matrix justification.
+
 Towards the end of this section, conclude that, within the simulation hypothesis, the epistemological status of god changes.
 
 \section{Discussion and conclusions}\label{sec:discussion}
 
-\paragraph{Acknowledgements:}
+\paragraph{Acknowledgements:} DWH would like to thank the generations of students at New York University who have asked and debated these questions in classes and office hours.
+It is a pleasure to thank Matt Kleban (NYU) and Melissa Ness (Columbia) for valuable conversations and comments. This work was partially supported by HOGG GRANT NUMBERS HERE.
 
-\section*{References}
-
-\end{document}
-
-%%
-OLD STUFF FOLLOWS
-%%
-
-\section{The plausibility}
-
-ALL WRONG / FIX....students, especially undergraduates interested in majoring in physics.
-It is also a question that is (effectively) asked by many popular
-movies, including \textit{The Matrix} (DATE), \textit{Total Recall}
-(DATE) and others.
-It seems ridiculous to even contemplate it, but then---as one does
-contemplate it---it becomes clear that it is hard to \emph{rule out}
-empirically or observationally.
-What would it be like to live in a simulation, and how would it be
-different from---or the same as---what we currently observe?
-The question has religious connotations or connections too, because if
-it turns out to be true that we do live in a simulation, then it might
-turn out to be true, strictly speaking, that we have a \emph{maker}.
-As usual, however, when physics questions meet religious questions, it
-will turn out
-physics doesn't provide the relevant answers.
-
-One of the remarkable things about physical law, at it's most fundamental,
-is that if the world is unitary and Hamiltonian, then there is a very
-true sense that we could be an a perfect analog-computer simulation.
-In both classical mechanics (\eg, CITE GOLDSTEIN) and quantum mechanics
-(\eg, CITE SOMETHING), there are perfect symplectic coordinate transformations
-between Hamiltonian systems, such that any Hamiltonian system (possibly subject
-to some weak assumptions like a time-independent form for the Hamiltonian)
-can be transformed into any other Hamiltonian system, delivering identical
-dynamics.
-
-When these transformations are made, combinations of positions and
-velocities from one coordinate system or representation become
-positions in the other coordinate system, and different combinations
-become velocities....
-Initial conditions...
-Entropy and etc...
-
-... the point that this means that the question has to become a
-statistical or probabilistic one.
-
-\section{The implausibility}
-
-(Introduce spacetime volume and mass-time ideas. Call out the point
-that within general relativity there is a measure problem that might
-make what's being said here technically wrong, but you know what I
-mean (sort of?). Woah, maybe this could be used to define a measure??)
-
-\section{The high probability}
-
-Famously, Bostrom (2003) solves this implausibility argument by saying
-that \emph{obviously} extremely intelligent and technologically
-capable entities will make ``ancestor simulations'' that have the
-property that they are very approximate, but self-correcting: If an
-intelligent agent within the simulation discovers that they are in the
-simulation, the simulation will be run back and re-started with that
-part simulated at higher resolution (so the intelligent agent never
-makes any such discovery). Very clever! It permits a technological entity
-to make a simulation that is undetectable by any agent within it, without
-requiring simulation hardware that is larger in spacetime volume than
-the world it simulates.
-
-Bostrom goes on to say that if it is natural for any very
-technologically capable entities to make such simulations, and if
-those simulations are rich enough that the agents within them will
-become technologically capable enough to make such simulations, then
-they will also make rich simulations, and so on. Once you build this
-tower of simulations, he claims, we are exceedingly unlikely to be at
-the top level of the tower.
-That is, most intelligent creatures in the full stack
-of universes (top-level plus all simulations) will end up \emph{not}
-being in that top-level universe. Good argument. Or is it?
-
-In addition to the usual eye-rolling that these arguments receive, I
-would highlight two extremely weak assumptions:
-
-The first weakness is that, ultimately, all of these simulated
-universes are being simulated by the top-level hardware. That is,
-every move that is made by every agent in every simulation within
-every simulation within every simulation of this simulation stack is
-being computed by the hardware at the top level. Even if this
-top-level hardware is very sophisicated---even if the entities
-operating it have commandeered the vast majority of the computing
-available to them on their planetary system which itself is made
-entirely of computers, there will have to be incredibly effective
-speed-ups and approximations going on in the simulations to make this
-all possible.
-
-One way to think about it is this: Imagine that the simulations are
-happening with an efficency factor of $q$: That is, because of amazing
-speed-ups obtained by performing the simulations sufficiently
-approximately, every tonne-hour of computing at the top level can
-compute $q>1$ tonne-hours of world-simulation in the stack of
-simulated worlds, on average. Then technologically-capable
-civilizations that want to run such simulations will put far more
-intelligent agents into the simulations and sub-simulations than exist
-at the top-level world when (very roughly speaking) they apportion far
-more than $1/q$ of their total world (like their homes, biosphere,
-computers, land, vehicles, and so on) into performing such
-simulations. That seems like a lot! Even if you got $q$ close to 100,
-which seems implausible, would you really use 1 percent of your total
-resources (and I don't just mean compute resources, I mean
-\emph{total} resources including all equipment, energy, food,
-personnel, and so on) on this project? A project that only addresses a
-small fraction of all interesting non-monetizable science questions?
-That's a pretty strong assumption.
-
-Bostrom considers it obvious that enormously expensive simulation
-efforts would happen at every level in the hierarchy of
-simulations. But I don't think it would happen at \emph{any} level in
-the hierarchy. Unless the singularity (\eg, Good 1966, or Chalmers 2010) leaves us with
-machines-in-charge that are way more interested in pure science than
-we are! That is, the fact that there is a hierarchy of simulations
-does not escape the problem that each simulation of every action in
-every simulated universe puts compute requirements (in some product of
-computing mass times time or total computing energy, say) at the top
-level. Those requirements are finite, and probably killing.
-
-The second weakness I'd like to point out is the unexamined premise
-that you could just stop the simulation and reverse it when someone
-inside the simulation discovers that they are in a simulation! CITE
-WITTGENSTEIN AND THOMPSON.
-
-\section{My attitude, and implications}
-
-Comments on Hinchliffe's Law.
-
-Does Bostrom's paper already rule out the hypothesis? No, because it
-is a bad paper.
-
-Comments on the existence of God.
-
-\section*{References}
-\begin{trivlist}
-\item Bostrom,~N., 2003, Are You Living in a Computer Simulation?,
-  \textit{Philosophical Quarterly} \textbf{53} 211 243--255.
-\item Chalmers,~D.~J., The Singularity: A philosophical analysis,
-  \textit{Journal of Consciousness Studies} \textbf{17} 7--65.
-\item Good,~I.~J., 1966. Speculations concerning the first ultraintelligent machine,
-  in (F.~L.~Alt \& M.~Rubinoff, eds.) \textit{Advances in Computers} \textbf{6} 31--88.
-\item \textit{Matrix, The}, HOGG DATE ETC.
-\item Thompson, A., 2017, Scientists Can Now Read Your Thoughts With a Brain Scan,
-  \textit{Popular Mechanics} 2017 June 27.
-\item \textit{Total Recall}, HOGG DATE ETC.
-\item Wikipedia editors, Betteridge's law of headlines,
-  \url{https://en.wikipedia.org/wiki/Betteridge%27s_law_of_headlines}
-    (accessed 2020 March 28)
-\item Wittgenstein, L., 1958, \textit{The Blue and Brown Books},
-  Basil Blackwell.
-\end{trivlist}
+\section{Annotated bibliography}\label{sec:bibliography}
+\nocite{*}
+\renewcommand{\section}[2]{} % extreme HACK
+\bibliographystyle{hacked-annote}
+\bibliography{simulation}
 
 \end{document}
